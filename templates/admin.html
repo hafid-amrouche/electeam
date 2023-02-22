@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+</head>
+<body>
+    <div style="padding: 15px; margin:15px; border: 2px solid #c8bc38; border-radius: 5px; display: flex; flex-wrap: wrap; flex-direction: column;">
+        <div style="padding: 15px; margin:15px; border: 2px solid #c8bc38; text-align: center; border-radius: 5px" onclick="window.location.href='{% url "profile" %}'">
+            Profile 
+        </div>
+        <div style="padding: 15px; margin:15px; border: 2px solid #c8bc38; text-align: center; border-radius: 5px" onclick="window.location.href='{% url "services" %}'">
+            Services
+        </div>
+        <div style="padding: 15px; margin:15px; border: 2px solid #c8bc38; text-align: center; border-radius: 5px"  onclick="window.location.href=''">
+            Your Posts
+        </div>
+        <div style="padding: 15px; margin:15px; border: 2px solid #c8bc38; text-align: center; border-radius: 5px"  onclick="window.location.href=''">
+            Create Post 
+        </div>
+        
+    </div>
+</body>
+
+<style>
+    div > div:hover,
+    div > div:active{
+        background-color: #c8bc38;
+        color: white;
+        cursor: pointer;
+    }
+</style>
+</html>

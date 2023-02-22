@@ -1,0 +1,16 @@
+<div id="location">
+    <div class="col-lg-6 m-auto" id="location" style="padding-top: 65px;">
+        <div class="text-container mb-4 mx-0">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3196.029540741144!2d3.244696714538861!3d36.76985877995481!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x128e4f0cb0e15547%3A0x3c835225b3f7f7d4!2sELECTEAM%20E%26C!5e0!3m2!1sen!2sdz!4v1676974868437!5m2!1sen!2sdz" style="border:0; width: 100%; max-width: 500px; aspect-ratio: 1;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div> <!-- end of col -->
+    <div class="text-center">
+        <button class="btn form-control-submit-button col-5 m-2" style="min-width: 150px;" onclick="window.location.href='tel:+213661217749'">
+            <i class="fas fa-mobile-alt m-2"></i>
+            +213661217749</button>
+        <button class="btn form-control-submit-button col-5 m-2" style="min-width: 150px;" onclick="window.location.href='https://goo.gl/maps/WnQn9Hc2ddEPFDqy6'" >
+            <i class="fas fa-map-marker-alt m-2"></i>
+            موقعنا
+        </button>
+    </div>
+</div>

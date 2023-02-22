@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Landing page template built with HTML and Bootstrap 4 for presenting training courses, classes, workshops and for convincing visitors to register using the form.">
+    <meta name="author" content="Inovatik">
+
+    <!-- OG Meta Tags to improve the way the post looks when you share the page on LinkedIn, Facebook, Google+ -->
+	<meta property="og:site_name" content="" /> <!-- website name -->
+	<meta property="og:site" content="" /> <!-- website link -->
+	<meta property="og:title" content=""/> <!-- title shown in the actual shared post -->
+	<meta property="og:description" content="" /> <!-- description shown in the actual shared post -->
+	<meta property="og:image" content="" /> <!-- image link, make sure it's jpg -->
+	<meta property="og:url" content="" /> <!-- where do you want your post to link to -->
+	<meta property="og:type" content="article" />
+
+    <!-- Website Title -->
+    <title>ElecTeam</title>
+    
+    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,600,700,700i&display=swap" rel="stylesheet">
+    <link href="static/css/bootstrap.css" rel="stylesheet">
+    <link href="static/css/fontawesome-all.css" rel="stylesheet">
+    <link href="static/css/swiper.css" rel="stylesheet">
+	<link href="static/css/magnific-popup.css" rel="stylesheet">
+	<link href="static/css/styles.css" rel="stylesheet">
+	
+	<!-- Favicon  -->
+    <link rel="icon" href="static/images/logo_light.png">
+    <style>
+        
+        [onclick]:hover{
+            cursor: pointer;
+        }
+        .media{
+            align-items: center;
+        }
+        label, p{
+            font-size: 1.2rem;
+        }
+        @media (min-width : 350px){
+            .navbar-nav{
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+<body data-spy="scroll" data-target=".fixed-top">
+    
+    <!-- Preloader -->
+	<div class="spinner-wrapper">
+        <div class="spinner">
+            <div class="bounce1"></div>
+            <div class="bounce2"></div>
+            <div class="bounce3"></div>
+        </div>
+    </div>
+    <!-- end of preloader -->
+    
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-md navbar-dark navbar-custom fixed-top">
+
+        <!-- Text Logo - Use this if you don't have a graphic logo -->
+        <!-- <a class="navbar-brand logo-text page-scroll" href="index.html">Corso</a> -->
+
+        <!-- Image Logo -->
+        <a class="navbar-brand logo-image" href=""><img style="width: 40px;" src="static/images/logo_light.png" alt="alternative"></a> 
+        <!-- Mobile Menu Toggle Button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-awesome fas fa-bars"></span>
+            <span class="navbar-toggler-awesome fas fa-times"></span>
+        </button>
+        <!-- end of mobile menu toggle button -->
+        <div class="collapse navbar-collapse change" id="navbarsExampleDefault"  >
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" href="#contact">Contactez Nous<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" href="#description">Services<span class="sr-only">(current)</span></a>
+                </li>             
+                <li class="nav-item">
+                    <a class="nav-link page-scroll" href="#location">Localisation <span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+            
+        </div>
+    </nav> <!-- end of navbar -->
+    <!-- end of navigation -->
+
+
+    <!-- Header -->
+    <header id="header" class="header" style="padding-top: 100px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="text-container">
+                        <h1 style="width: auto;">{{ info.welcome }}</h1>
+                        <a class="btn-outline-lg page-scroll m-2" href="#contact">Contactez Nous</a>
+                    </div> <!-- end of text-container -->
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+        
+        <!-- Image Slider -->
+        <div class="outer-container">
+            <div class="slider-container">
+                <div class="swiper-container image-slider-1">
+                    <div class="swiper-wrapper">
+                        
+                        {% for image in gallery_images %}
+                        <!-- Slide -->
+                        <div class="swiper-slide" >
+                            <img class="img-fluid" style="width: 100%;" src="{{ image.image.url }}" alt="alternative">
+                        </div>
+                        <!-- end of slide -->
+                        {% endfor %}
+
+
+                    </div> <!-- end of swiper-wrapper -->
+                    
+                    <!-- Add Arrows -->
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <!-- end of add arrows -->
+                    
+                </div> <!-- end of swiper-container -->
+            </div> <!-- end of slider-container -->
+        </div> <!-- end of outer-container -->
+        <!-- end of image slider -->
+
+    </header> <!-- end of header -->
+    <!-- end of header -->
+
+
+    <!-- Instructor -->
+    <div id="instructor" class="basic-1 change mt-md-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="text-container mb-4">
+                        <h2>C'est qui ELECTEAM ?</h2>
+                        <p style="font-size: 1.3rem">
+                            {{ info.description }}
+                        </p>    
+                    </div> <!-- end of text-container -->
+                </div> <!-- end of col -->
+                <div class="col-lg-6">
+                    <img width="100%" class="img-fluid" src="{{ info.main_image.url }}" alt="alternative">
+                </div> <!-- end of col -->
+               
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of basic-1 -->
+    <!-- end of instructor -->
+    <div class="slider-1 pt-0">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="row">
+                        <div class="col-lg-12 mb-4">
+                            <h2 class="mb-0">Nous Partener</h2>
+                        </div> <!-- end of col -->
+                    </div>
+
+                    <!-- Image Slider -->
+                    <div class="slider-container">
+                        <div class="swiper-container image-slider-2 swiper-container-horizontal">
+                            <div class="swiper-wrapper" style="transform: translate3d(-1353px, 0px, 0px); transition-duration: 300ms;"><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-active" data-swiper-slide-index="2" style="width: 205.5px; margin-right: 20px;">
+                                        <img class="img-fluid" src="static/images/customer-logo-3.png" alt="alternative">
+                                </div><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-next" data-swiper-slide-index="3" style="width: 205.5px; margin-right: 20px;">
+                                        <img class="img-fluid" src="static/images/customer-logo-4.png" alt="alternative">
+                                </div><div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="4" style="width: 205.5px; margin-right: 20px;">
+                                        <img class="img-fluid" src="static/images/customer-logo-5.png" alt="alternative">
+                                </div><div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="5" style="width: 205.5px; margin-right: 20px;">
+                                        <img class="img-fluid" src="static/images/customer-logo-6.png" alt="alternative">
+                                </div>
+                                <div class="swiper-slide" data-swiper-slide-index="0" style="width: 205.5px; margin-right: 20px;">
+                                        <img class="img-fluid" src="static/images/customer-logo-1.png" alt="alternative">
+                                </div>
+                                <div class="swiper-slide swiper-slide-prev" data-swiper-slide-index="1" style="width: 205.5px; margin-right: 20px;">
+                                        <img class="img-fluid" src="static/images/customer-logo-2.png" alt="alternative">
+                                </div>
+                                <div class="swiper-slide swiper-slide-active" data-swiper-slide-index="2" style="width: 205.5px; margin-right: 20px;">
+                                        <img class="img-fluid" src="static/images/customer-logo-3.png" alt="alternative">
+                                </div>
+                                <div class="swiper-slide swiper-slide-next" data-swiper-slide-index="3" style="width: 205.5px; margin-right: 20px;">
+                                        <img class="img-fluid" src="static/images/customer-logo-4.png" alt="alternative">
+                                </div>
+                                <div class="swiper-slide" data-swiper-slide-index="4" style="width: 205.5px; margin-right: 20px;">
+                                        <img class="img-fluid" src="static/images/customer-logo-5.png" alt="alternative">
+                                </div>
+                                <div class="swiper-slide" data-swiper-slide-index="5" style="width: 205.5px; margin-right: 20px;">
+                                        <img class="img-fluid" src="static/images/customer-logo-6.png" alt="alternative">
+                                </div>
+                            <div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="0" style="width: 205.5px; margin-right: 20px;">
+                                        <img class="img-fluid" src="static/images/customer-logo-1.png" alt="alternative">
+                                </div><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-prev" data-swiper-slide-index="1" style="width: 205.5px; margin-right: 20px;">
+                                        <img class="img-fluid" src="static/images/customer-logo-2.png" alt="alternative">
+                                </div><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-active" data-swiper-slide-index="2" style="width: 205.5px; margin-right: 20px;">
+                                        <img class="img-fluid" src="static/images/customer-logo-3.png" alt="alternative">
+                                </div><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-next" data-swiper-slide-index="3" style="width: 205.5px; margin-right: 20px;">
+                                        <img class="img-fluid" src="static/images/customer-logo-4.png" alt="alternative">
+                                </div></div> <!-- end of swiper-wrapper -->
+                        <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div> <!-- end of swiper container -->
+                    </div> <!-- end of slider-container -->
+                    <!-- end of image slider -->
+
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div>
+
+     <!-- Contact -->
+     <div id="contact" class="form-3 change mt-4 pb-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 m-auto">
+                    <h2>Contactez Nous</h2>
+                    <!-- Contact Form -->
+                    <form id="contact_form"  method="POST" action="">
+                        {% csrf_token %}
+                        <div class="alert alert-success col-12" style=" display: none;" id="message_res_" role="alert">
+                            <span onclick="this.parentNode.style.display='none'" style="position: absolute;right: 5px;top: 4px;padding: 2px 3px 2px 4px;border: 1px solid;border-radius: 3px;" class="navbar-toggler-awesome fas fa-times"></span>
+                            <h4 class="alert-heading text-center mb-0" id="res_text_"></h4>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control-input" maxlength="50" name="cname" id="cname" required>
+                            <label class="label-control" for="cname">Nom et Prenom</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control-input" maxlength="50" name="cemail" id="cemail" required>
+                            <label class="label-control" for="cemail">Email</label>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control-textarea" maxlength="1000" name="cmessage" id="cmessage" required></textarea>
+                            <label class="label-control" for="cmessage">Ton message</label>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" id="id_button_" class="form-control-submit-button">Envoyer</button>
+                        </div>
+                    </form>
+                    <!-- end of contact form -->
+
+                </div> <!-- end of col -->
+                
+            </div> <!-- end of row -->    
+        </div> <!-- end of container -->
+        <div class="text-center col-12 mt-4">
+            <button class="btn form-control-submit-button col-5 m-2" style="min-width: 160px;" onclick="window.location.href='tel:+213661217749'">
+                <i class="fas fa-mobile-alt m-2"></i>
+                +213661217749</button>
+            <button class="btn form-control-submit-button col-5 m-2" style="min-width: 160px;" onclick="window.location.href='https://goo.gl/maps/WnQn9Hc2ddEPFDqy6'" >
+                <i class="fas fa-map-marker-alt m-2"></i>
+                Localisation
+            </button>
+        </div>
+    </div> <!-- end of form-3 -->
+    <!-- end of contact -->
+    <div class="p-3">
+        <div class="embed-responsive embed-responsive-16by9">
+            <video class="embed-responsive-item" controls>
+                <source src="{{ info.video.url }}">
+            </video>
+        </div>
+    </div>
+    <!-- Description -->
+    <div id="description" class="basic-2">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 class="mb-0">Nous Services</h2>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+            {% for service in services %}
+                <div class="services-container">
+                    <h4>{{ service.title }}</h4>
+                    <p>
+                        {{ service.paragraph }}
+                    </p>
+                    <div class="service-images">
+                        {% for image in service.serviceimage_set.all %}
+                            <img src="{{image.image.url}}" alt="">
+                        {% endfor %}
+                    </div>
+                    
+                </div> <!-- end of row -->
+            {% endfor %}
+           
+            
+        </div> <!-- end of container -->
+    </div> <!-- end of basic-2 -->
+    <!-- end of description -->
+
+
+
+
+
+    <div id="location" class="mt-3">
+        <div class="text-center">
+            <button class="btn form-control-submit-button col-5 m-2" style="min-width: 160px;" onclick="window.location.href='tel:+213661217749'">
+                <i class="fas fa-mobile-alt m-2"></i>
+                +213661217749</button>
+            <button class="btn form-control-submit-button col-5 m-2" style="min-width: 160px;" onclick="window.location.href='https://goo.gl/maps/WnQn9Hc2ddEPFDqy6'" >
+                <i class="fas fa-map-marker-alt m-2"></i>
+                Localisation
+            </button>
+        </div>
+        <div class="col-lg-6 m-auto pt-3" id="location" style="padding-top: 65px;">
+            <div class="text-container mb-4 mx-0 text-center">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3196.029540741144!2d3.244696714538861!3d36.76985877995481!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x128e4f0cb0e15547%3A0x3c835225b3f7f7d4!2sELECTEAM%20E%26C!5e0!3m2!1sen!2sdz!4v1676974868437!5m2!1sen!2sdz" style="border:0; width: 100%; max-width: 500px; aspect-ratio: 1;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div> <!-- end of col -->
+    </div>
+    
+
+    <div style="height:100px"></div>
+
+
+    <style>
+        .service-images{
+            display: flex;
+            flex-shrink: 0;
+            overflow-x: auto;
+        }
+        .service-images img{
+            height: 60vh;
+            margin-right: 10px;
+        }
+        .services-container{
+            margin-top: 30px;
+        }
+    </style>
+    
+    	
+    <!-- Scripts -->
+    <script src="static/js/jquery.min.js"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
+    <script src="static/js/popper.min.js"></script> <!-- Popper tooltip library for Bootstrap -->
+    <script src="static/js/bootstrap.min.js"></script> <!-- Bootstrap framework -->
+    <script src="static/js/jquery.easing.min.js"></script> <!-- jQuery Easing for smooth scrolling between anchors -->
+    <script src="static/js/jquery.countdown.min.js"></script> <!-- The Final Countdown plugin for jQuery -->
+    <script src="static/js/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
+    <script src="static/js/jquery.magnific-popup.js"></script> <!-- Magnific Popup for lightboxes -->
+    <script src="static/js/validator.min.js"></script> <!-- Validator.js - Bootstrap plugin that validates forms -->
+    <script src="static/js/scripts.js"></script> <!-- Custom scripts -->
+   
+    <script>
+        let form2 = document.getElementById('contact_form')
+        form2.addEventListener('submit', function(e){
+            e.preventDefault()
+            id_button_.innerHTML=
+                    ` 
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="margin: auto; background: transparent; display: block; shape-rendering: auto; animation-play-state: running; animation-delay: 0s;" height="24px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid"><circle cx="50" cy="50" fill="none" stroke="#000" stroke-width="10" r="35" stroke-dasharray="164.93361431346415 56.97787143782138" style="animation-play-state: running; animation-delay: 0s;"><animateTransform attributeName="transform" type="rotate" repeatCount="indefinite" dur="1s" values="0 50 50;360 50 50" keyTimes="0;1" style="animation-play-state: running; animation-delay: 0s;"></animateTransform></circle><!-- [ldio] generated by https://loading.io/ --></svg>
+                    ` 
+            $.ajax({
+                type: 'POST',
+                url: "{% url 'contact-us' %}",
+                data:{
+                    csrfmiddlewaretoken : $('input[name=csrfmiddlewaretoken]').val(),
+                    name : $('#cname').val(),
+                    email : $('#cemail').val(),
+                    message : $('#cmessage').val(),
+                },
+                success: function(){
+                    id_button_.innerHTML= 'Envoyer'
+                    message_res_.className = "alert alert-success col-12"
+                    res_text_.innerHTML = "Message Envoyer"
+                    message_res_.style.display="block"
+                    cname.value = ""
+                    cemail.value = ""
+                    cmessage.value = ""
+                },
+                error: function(){
+                    id_button_.innerHTML= 'Envoyer',
+                    message_res_.className = "alert alert-warning col-12"
+                    res_text_.innerHTML = 'Message pas envoyer'
+                    message_res_.style.display="block"
+                }
+            })
+        })
+    </script>
+    <script>
+        var collection = document.getElementsByTagName("input")
+        for (input_ of collection){
+        if( input_.id !='age' && input_.id !='cemail' ){
+            input_.setAttribute("oninvalid", "this.setCustomValidity('Cet information est obligatoire')")
+            input_.setAttribute("oninput", "setCustomValidity('')")
+        }
+        }
+    </script>
+    
+</body>
+</html>
